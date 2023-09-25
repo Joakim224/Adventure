@@ -20,8 +20,8 @@ public class UserInterface {
 
     public void direction() {
         String input = "";
-        input = scanner.next();
         while (!input.equals("exit")) {
+            input = scanner.nextLine();
             switch (input) {
                 case "go south":
                     System.out.println("Going South");
