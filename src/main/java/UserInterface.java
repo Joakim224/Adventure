@@ -2,9 +2,10 @@ import java.util.Scanner;
 
 public class UserInterface {
     Scanner scanner = new Scanner(System.in);
+    Adventure adventure = new Adventure();
+
 
     public void startProgram() {
-        /*adventure = new Adventure();*/
         welcome();
     }
 
@@ -19,6 +20,7 @@ public class UserInterface {
     }
 
     public void direction() {
+        adventure.createRoom();
         String input = "";
         while (!input.equals("exit")) {
             input = scanner.nextLine();
@@ -43,7 +45,8 @@ public class UserInterface {
                     break;
 
                 case "look":
-                    System.out.println("currentroom");
+                    System.out.println(adventure.getCurrentRoom().getName());
+                    System.out.println(adventure.getCurrentRoom().getDescription());
                     break;
 
                 default:

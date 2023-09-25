@@ -9,6 +9,8 @@ public class Room {
 
     public Room(String name, String description) {
         this.description = description;
+        this.name = name;
+
     }
 
     public Room getWest() {

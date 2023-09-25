@@ -1,8 +1,8 @@
 public class Adventure {
-    private Room currentroom;
+    private Room currentRoom;
 
-    public Room getCurrentroom() {
-        return currentroom;
+    public Room getCurrentRoom() {
+        return currentRoom;
     }
 
     public void createRoom() {
@@ -15,7 +15,7 @@ public class Adventure {
         Room room7 = new Room("room7", "description");
         Room room8 = new Room("room8", "description");
         Room room9 = new Room("room9", "description");
-        currentroom = room1;
+        currentRoom = room1;
     }
 
 }
