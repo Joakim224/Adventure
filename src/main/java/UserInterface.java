@@ -3,10 +3,11 @@ import java.util.Scanner;
 public class UserInterface {
     Scanner scanner = new Scanner(System.in);
 
-    public void startProgram(){
+    public void startProgram() {
         /*adventure = new Adventure();*/
         welcome();
     }
+
     public void welcome() {
         System.out.println("WELCOME TO THE CAVE EXPLORER: 1.0" + "\n ");
         System.out.println("Menu: " +
@@ -53,7 +54,7 @@ public class UserInterface {
         }
     }
 
-    public void endProgram(){
+    public void endProgram() {
         System.out.println("Game ended.");
     }
 
