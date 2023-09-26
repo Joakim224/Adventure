@@ -7,7 +7,7 @@ public class Adventure {
     }
 
     public void createRoom() {
-        Room room1 = new Room("Cave entrance", "You are in a dark cold cave, you can hear dripping noices in the near distance");
+        Room room1 = new Room("Cave entrance", "You are in a dark cold cave, you can hear dripping noises in the near distance");
         Room room2 = new Room("Echoing abyss", "As you step into the Echoing Abyss room, you are immediately struck by an overwhelming sense of awe and mystery.");
         Room room3 = new Room("Crystal tunnel", "The sound of water dripping on the crystals makes for an ominous sound. You wonder what kind of crystals they are.");
         Room room4 = new Room("Emerald chamber", "Emerald is all over the walls and ceiling. The light from ur flashlight makes the whole room shine green.");
@@ -46,14 +46,10 @@ public class Adventure {
         room9.setNorth(room6);
     }
 
-
     public String getPlayer() {
         return player;
     }
 
-    public void setCurrentRoom(Room room) {
-        currentRoom = room;
-    }
     public boolean goSouth() {
         if (currentRoom.getSouth() != null) {
             currentRoom = currentRoom.getSouth();
