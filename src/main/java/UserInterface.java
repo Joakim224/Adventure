@@ -29,15 +29,15 @@ public class UserInterface {
                     System.out.println("Going South" + adventure.getCurrentRoom().getDescription());
                     break;
                 case "go north":
-                    System.out.println("Going North");
+                    System.out.println("Going North" + adventure.getCurrentRoom().getDescription());
                     break;
 
                 case "go west":
-                    System.out.println("Going West");
+                    System.out.println("Going West" + adventure.getCurrentRoom().getDescription());
                     break;
 
                 case "go east":
-                    System.out.println("Going East");
+                    System.out.println("Going East" + adventure.getCurrentRoom().getDescription());
                     break;
 
                 case "exit":
