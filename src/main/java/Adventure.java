@@ -8,7 +8,7 @@ public class Adventure {
 
     public void createRoom() {
         Room room1 = new Room("Cave entrance", "You are in a dark cold cave, you can hear dripping noices in the near distance");
-        Room room2 = new Room("Echoing abyss", "");
+        Room room2 = new Room("Echoing abyss", "As you step into the Echoing Abyss room, you are immediately struck by an overwhelming sense of awe and mystery");
         Room room3 = new Room("Crystal tunnel", "");
         Room room4 = new Room("Emerald chamber", "");
         Room room5 = new Room("The throne room", "");
