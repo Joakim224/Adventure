@@ -7,20 +7,19 @@ public class Adventure {
     }
 
     public void createRoom() {
-        Room room1 = new Room("room1", "description");
-        Room room2 = new Room("room2", "description");
-        Room room3 = new Room("room3", "description");
-        Room room4 = new Room("room4", "description");
-        Room room5 = new Room("room5", "description");
-        Room room6 = new Room("room6", "description");
-        Room room7 = new Room("room7", "description");
-        Room room8 = new Room("room8", "description");
-        Room room9 = new Room("room9", "description");
+        Room room1 = new Room("Cave entrance", "You are in a dark cold cave, you can hear dripping noices in the near distance");
+        Room room2 = new Room("Echoing abyss", "");
+        Room room3 = new Room("Crystal tunnel", "");
+        Room room4 = new Room("Emerald chamber", "");
+        Room room5 = new Room("The throne room", "");
+        Room room6 = new Room("Luminous lagoon", "");
+        Room room7 = new Room("The echo chamber", "");
+        Room room8 = new Room("The relic repository", "");
+        Room room9 = new Room("The Enigma's Epilogue", "");
         currentRoom = room1;
         room1.setSouth(room4);
         room1.setEast(room2);
         room1.setNorth(null);
-
 
         room2.setWest(room1);
         room2.setEast(room3);
