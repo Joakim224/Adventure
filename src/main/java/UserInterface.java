@@ -26,28 +26,35 @@ public class UserInterface {
             input = scanner.nextLine();
             switch (input) {
                 case "go south":
-                    System.out.println("Going South" + adventure.getCurrentRoom().getDescription());
+                    adventure.goSouth();
+                    System.out.println("Going South to " + adventure.getCurrentRoom().getDescription()+adventure.getCurrentRoom().getName());
                     break;
                 case "go north":
                     System.out.println("Going North" + adventure.getCurrentRoom().getDescription());
+                    adventure.goNorth();
                     break;
 
                 case "go west":
+                    adventure.goWest();
                     System.out.println("Going West" + adventure.getCurrentRoom().getDescription());
                     break;
 
                 case "go east":
+                    adventure.goEast();
                     System.out.println("Going East" + adventure.getCurrentRoom().getDescription());
                     break;
 
                 case "exit":
                     endProgram();
-                    break;
+                    return;
 
                 case "look":
                     System.out.println(adventure.getCurrentRoom().getName());
                     System.out.println(adventure.getCurrentRoom().getDescription());
                     break;
+
+                case "help":
+                    System.out.println("Instructions");
 
                 default:
                     System.out.println("Invalid choice, try again");
