@@ -26,22 +26,28 @@ public class UserInterface {
             input = scanner.nextLine();
             switch (input) {
                 case "go south":
+                    System.out.println("Going South");
                     adventure.goSouth();
-                    System.out.println("Going South to " + adventure.getCurrentRoom().getName()+adventure.getCurrentRoom().getDescription());
+                    System.out.println(adventure.getCurrentRoom().getName()+adventure.getCurrentRoom().getDescription());
                     break;
                 case "go north":
-                    System.out.println("Going North" + adventure.getCurrentRoom().getDescription());
+                    System.out.println("Going North");
                     adventure.goNorth();
+                    System.out.println(adventure.getCurrentRoom().getName()+adventure.getCurrentRoom().getDescription());
                     break;
 
                 case "go west":
+                    System.out.println("Going West");
                     adventure.goWest();
-                    System.out.println("Going West" + adventure.getCurrentRoom().getDescription());
+                    System.out.println(adventure.getCurrentRoom().getName()+adventure.getCurrentRoom().getDescription());
+
                     break;
 
                 case "go east":
+                    System.out.println("Going East");
                     adventure.goEast();
-                    System.out.println("Going East" + adventure.getCurrentRoom().getDescription());
+                    System.out.println(adventure.getCurrentRoom().getName()+adventure.getCurrentRoom().getDescription());
+
                     break;
 
                 case "exit":
@@ -54,8 +60,11 @@ public class UserInterface {
                     break;
 
                 case "help":
-                    System.out.println("Instructions");
-
+                    System.out.println("Instructions:"+
+                            "\nType GO + the direction you want to move towards (North,South,East,West). " +
+                                    "\nType LOOK to see current room " +
+                                    "\nType EXIT to exit the game.");
+                break;
                 default:
                     System.out.println("Invalid choice, try again");
                     break;
