@@ -26,7 +26,7 @@ public class UserInterface {
             input = scanner.nextLine();
             switch (input) {
                 case "go south":
-                    System.out.println("Going South");
+                    System.out.println("Going South" + adventure.getCurrentRoom().getDescription());
                     break;
                 case "go north":
                     System.out.println("Going North");
