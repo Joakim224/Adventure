@@ -10,7 +10,7 @@ public class Map {
             Room room2 = new Room("Echoing abyss: ", "As you step into the Echoing Abyss room, you are immediately struck by an overwhelming sense of awe and mystery.");
             Room room3 = new Room("Crystal tunnel: ", "The sound of water dripping on the crystals makes for an ominous sound. You wonder what kind of crystals they are.");
             Room room4 = new Room("Emerald chamber: ", "Emerald is all over the walls and ceiling. The light from ur flashlight makes the whole room shine green.");
-            Room room5 = new Room("The throne room: ", "This room looks different from the others. The ceiling and walls are all filled with symbols and patterns. At the far end a big thrown");
+            Room room5 = new Room("The throne room: ", "This room looks different from the others. The ceiling and walls are all filled with symbols and patterns. At the far end of the room is a big shiny throne");
             Room room6 = new Room("Luminous lagoon: ", "This room is filled with water. You have no idea how deep and you dont dare jump in to check.");
             Room room7 = new Room("The echo chamber: ", "You enter a huge room in the cave. The room is so big you can't even see the ceiling. All sounds bounce off the walls and echo for");
             Room room8 = new Room("The relic repository: ", "This room is filled with random trinkets and shiny objects. You suspect this might have been used as a storage in the past.");
