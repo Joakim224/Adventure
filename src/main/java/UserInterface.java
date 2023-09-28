@@ -27,7 +27,6 @@ public class UserInterface {
     }
 
     public void direction() {
-        adventure.createRoom();
         String input = "";
         while (!input.equals("exit")) {
             input = scanner.nextLine().trim().toLowerCase();
@@ -46,7 +45,7 @@ public class UserInterface {
                 case "go west":
                     System.out.println("Going West");
                     adventure.goWest();
-                    System.out.println(adventure.getCurrentRoom().getName()+adventure.getCurrentRoom().getDescription());
+                    System.out.println(adventure.getCurrentRoom().getName() + adventure.getCurrentRoom().getDescription());
 
                     break;
 
