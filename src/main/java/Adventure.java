@@ -64,6 +64,14 @@ public class Adventure {
         }
     }
 
+    public void createMap() {
+        map.createMap();
+    }
+
+    public Room getCurrentRoom(){
+        return player.getCurrentRoom();
+    }
+
     public boolean goNorth() {
         if (currentRoom.getNorth() != null) {
             currentRoom = currentRoom.getNorth();

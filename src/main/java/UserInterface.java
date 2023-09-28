@@ -2,8 +2,12 @@ import java.util.Scanner;
 
 public class UserInterface {
     Scanner scanner = new Scanner(System.in);
-    Adventure adventure = new Adventure();
+    private Adventure adventure;
 
+    public UserInterface() {
+       adventure = new Adventure();
+       adventure.createMap();
+    }
 
     public void startProgram() {
         welcome();
