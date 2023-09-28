@@ -1,16 +1,6 @@
-public class Adventure {
-    private String player;
-    private Map map = new Map();
-    private Room currentRoom;
-
-   // public Adventure() {
-     //   map.createMap();
-   // }
-    public Room getCurrentRoom() {
-        return currentRoom;
-    }
-
-    public void createRoom() {
+public class Map {
+/*
+    public void createMap() {
         Room room1 = new Room("Cave entrance", "You are in a dark cold cave, you can hear dripping noises in the near distance");
         Room room2 = new Room("Echoing abyss", "As you step into the Echoing Abyss room, you are immediately struck by an overwhelming sense of awe and mystery.");
         Room room3 = new Room("Crystal tunnel", "The sound of water dripping on the crystals makes for an ominous sound. You wonder what kind of crystals they are.");
@@ -50,49 +40,5 @@ public class Adventure {
         room9.setNorth(room6);
     }
 
-    public String getPlayer() {
-        return player;
-    }
-
-    public boolean goSouth() {
-        if (currentRoom.getSouth() != null) {
-            currentRoom = currentRoom.getSouth();
-            return true;
-        } else {
-            System.out.println("The path is blocked!");
-            return false;
-        }
-    }
-
-    public boolean goNorth() {
-        if (currentRoom.getNorth() != null) {
-            currentRoom = currentRoom.getNorth();
-            return true;
-        } else {
-            System.out.println("The path is blocked!");
-            return false;
-        }
-    }
-
-    public boolean goWest() {
-        if (currentRoom.getWest() != null) {
-            currentRoom = currentRoom.getWest();
-            return true;
-        } else {
-            System.out.println("The path is blocked!");
-            return false;
-        }
-    }
-
-    public boolean goEast() {
-        if (currentRoom.getEast() != null) {
-            currentRoom = currentRoom.getEast();
-            return true;
-        } else {
-            System.out.println("The path is blocked!");
-            return false;
-        }
-    }
+ */
 }
-
-
