@@ -1,7 +1,11 @@
 public class Adventure {
-    private Room currentRoom;
     private String player;
+    private Map map = new Map();
+    private Room currentRoom;
 
+   // public Adventure() {
+     //   map.createMap();
+   // }
     public Room getCurrentRoom() {
         return currentRoom;
     }
