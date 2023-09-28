@@ -9,7 +9,6 @@ public class Room {
     public Room(String name, String description) {
         this.description = description;
         this.name = name;
-
     }
 
     public Room getWest() {
@@ -28,10 +27,10 @@ public class Room {
         return north;
     }
 
+
     public void setWest(Room west) {
         this.west = west;
     }
-
 
     public void setSouth(Room south) {
         this.south = south;
