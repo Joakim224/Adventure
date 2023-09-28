@@ -23,7 +23,7 @@ public class UserInterface {
         adventure.createRoom();
         String input = "";
         while (!input.equals("exit")) {
-            input = scanner.nextLine();
+            input = scanner.nextLine().trim().toLowerCase();
             switch (input) {
                 case "go south":
                     System.out.println("Going South");
