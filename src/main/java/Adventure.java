@@ -93,6 +93,22 @@ public class Adventure {
             return false;
         }
     }
+
+    public boolean goNorth() {
+        return player.goNorth();
+    }
+
+    public boolean goWest() {
+        return player.goWest();
+    }
+
+    public boolean goEast() {
+        return player.goEast();
+    }
+
+    public Room currentRoom() {
+        return player.getCurrentRoom();
+    }
 }
 
 

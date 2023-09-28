@@ -50,7 +50,6 @@ public class UserInterface {
                     System.out.println("Going East");
                     adventure.goEast();
                     System.out.println(adventure.getCurrentRoom().getName()+adventure.getCurrentRoom().getDescription());
-
                     break;
 
                 case "exit":
@@ -58,8 +57,8 @@ public class UserInterface {
                     return;
 
                 case "look":
-                    System.out.println(adventure.getCurrentRoom().getName());
-                    System.out.println(adventure.getCurrentRoom().getDescription());
+                    System.out.println(adventure.currentRoom().getName());
+                    System.out.println(adventure.currentRoom().getDescription());
                     break;
 
                 case "help":
@@ -71,13 +70,10 @@ public class UserInterface {
                 default:
                     System.out.println("Invalid choice, try again");
                     break;
-
             }
         }
     }
-
     public void endProgram() {
         System.out.println("Game ended.");
     }
-
 }
