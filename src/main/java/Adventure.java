@@ -14,7 +14,7 @@ public class Adventure {
         map.createMap();
     }
 
-    public Room getCurrentRoom(){
+    public Room getCurrentRoom() {
         return player.getCurrentRoom();
     }
 
