@@ -14,7 +14,6 @@ public class Room {
         this.name = name;
     }
 
-
     public Room getWest() {
         return west;
     }
