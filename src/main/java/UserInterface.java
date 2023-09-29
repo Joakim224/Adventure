@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class UserInterface {
     Scanner scanner = new Scanner(System.in);
     private Adventure adventure;
@@ -30,29 +31,34 @@ public class UserInterface {
         String input = "";
         while (!input.equals("exit")) {
             input = scanner.nextLine();
-            switch (input) {
-                case "go south","s","S","south":
+            String[] inputSplit = input.split("\\s+");
+            String command = inputSplit[0];
+            if (inputSplit.length > 1) {
+                input = inputSplit[1];
+            }
+            switch (command) {
+                case "go south", "s", "S", "south":
                     System.out.println("Going South");
                     adventure.goSouth();
                     System.out.println(adventure.getCurrentRoom().getName() + adventure.getCurrentRoom().getDescription() + adventure.getCurrentRoom().getItems());
                     break;
-                case "go north","n","N","north":
+                case "go north", "n", "N", "north":
                     System.out.println("Going North");
                     adventure.goNorth();
-                    System.out.println(adventure.getCurrentRoom().getName() + adventure.getCurrentRoom().getDescription()+adventure.getCurrentRoom().getItems());
+                    System.out.println(adventure.getCurrentRoom().getName() + adventure.getCurrentRoom().getDescription() + adventure.getCurrentRoom().getItems());
                     break;
 
-                case "go west","w","W","west":
+                case "go west", "w", "W", "west":
                     System.out.println("Going West");
                     adventure.goWest();
-                    System.out.println(adventure.getCurrentRoom().getName() + adventure.getCurrentRoom().getDescription()+adventure.getCurrentRoom().getItems());
+                    System.out.println(adventure.getCurrentRoom().getName() + adventure.getCurrentRoom().getDescription() + adventure.getCurrentRoom().getItems());
 
                     break;
 
-                case "go east","e","E","east":
+                case "go east", "e", "E", "east":
                     System.out.println("Going East");
                     adventure.goEast();
-                    System.out.println(adventure.getCurrentRoom().getName() + adventure.getCurrentRoom().getDescription()+ adventure.getCurrentRoom().getItems());
+                    System.out.println(adventure.getCurrentRoom().getName() + adventure.getCurrentRoom().getDescription() + adventure.getCurrentRoom().getItems());
                     break;
 
                 case "help":
@@ -65,15 +71,22 @@ public class UserInterface {
                 case "look":
                     System.out.println(adventure.currentRoom().getName());
                     System.out.println(adventure.currentRoom().getDescription());
+                    System.out.println(adventure.currentRoom().getItems());
                     break;
 
                 case "take":
-                    adventure.getCurrentRoom().removeItem();
+                    Item itemTaken = adventure.takeItem(input);
+                    if (itemTaken != null) {
+                        System.out.println("You pick up a: " + input);
+                    } else {
+                        System.out.println("There is no item in the room of that name.");
+                    }
                     break;
 
                 case "exit":
                     endProgram();
                     return;
+
 
                 default:
                     System.out.println("Invalid choice, try again");

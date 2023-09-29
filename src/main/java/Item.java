@@ -1,30 +1,22 @@
 public class Item {
     private String itemName;
-    private String description;
+    private String itemDescription;
 
-    public Item(String name, String description) {
-        this.itemName = name;
-        this.description = description;
+    public Item(String itemName, String itemDescription) {
+        this.itemName = itemName;
+        this.itemDescription = itemDescription;
     }
 
-    public String getitemName() {
+    public String getItemName() {
         return itemName;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setName() {
-        this.itemName = itemName;
-    }
-
-    public void setDescription() {
-        this.description = description;
+    public String getItemDescription() {
+        return itemDescription;
     }
 
     @Override
     public String toString() {
-        return itemName + " " + description;
+        return itemName + " " + itemDescription;
     }
 }

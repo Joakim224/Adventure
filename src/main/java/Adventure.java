@@ -37,6 +37,10 @@ public class Adventure {
     public Room currentRoom() {
         return player.getCurrentRoom();
     }
+
+    public Item takeItem(String itemName) {
+        return player.takeItem(itemName);
+    }
 }
 
 

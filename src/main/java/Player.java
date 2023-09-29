@@ -51,13 +51,23 @@ public class Player {
             return false;
         }
     }
-    public void addItem(Item item){
+
+    public void addItem(Item item) {
         inventory.add(item);
     }
 
+    public void removeItem(Item item) {
+        inventory.remove(item);
+    }
+
+    public ArrayList<Item> getInventory() {
+        return inventory;
+    }
+
     public Item takeItem(String itemName) {
-        Item pickeditem = getCurrentRoom().findItem(itemName);
-        addItem(pickeditem);
+        Item takenItem = getCurrentRoom().removeItem(itemName);
+        addItem(takenItem);
+        return takenItem;
 
     }
 }
