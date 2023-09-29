@@ -31,28 +31,28 @@ public class UserInterface {
         while (!input.equals("exit")) {
             input = scanner.nextLine();
             switch (input) {
-                case "go south":
+                case "go south","s","S","south":
                     System.out.println("Going South");
                     adventure.goSouth();
                     System.out.println(adventure.getCurrentRoom().getName() + adventure.getCurrentRoom().getDescription() + adventure.getCurrentRoom().getItems());
                     break;
-                case "go north":
+                case "go north","n","N","north":
                     System.out.println("Going North");
                     adventure.goNorth();
-                    System.out.println(adventure.getCurrentRoom().getName() + adventure.getCurrentRoom().getDescription());
+                    System.out.println(adventure.getCurrentRoom().getName() + adventure.getCurrentRoom().getDescription()+adventure.getCurrentRoom().getItems());
                     break;
 
-                case "go west":
+                case "go west","w","W","west":
                     System.out.println("Going West");
                     adventure.goWest();
-                    System.out.println(adventure.getCurrentRoom().getName() + adventure.getCurrentRoom().getDescription());
+                    System.out.println(adventure.getCurrentRoom().getName() + adventure.getCurrentRoom().getDescription()+adventure.getCurrentRoom().getItems());
 
                     break;
 
-                case "go east":
+                case "go east","e","E","east":
                     System.out.println("Going East");
                     adventure.goEast();
-                    System.out.println(adventure.getCurrentRoom().getName() + adventure.getCurrentRoom().getDescription());
+                    System.out.println(adventure.getCurrentRoom().getName() + adventure.getCurrentRoom().getDescription()+ adventure.getCurrentRoom().getItems());
                     break;
 
                 case "help":

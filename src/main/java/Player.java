@@ -51,6 +51,10 @@ public class Player {
             return false;
         }
     }
+    public Item take(String itemName){
+        
+    }
+
 }
 
 

@@ -55,4 +55,11 @@ public class Room {
     public String getName() {
         return name;
     }
+    public void addItem(String name, String description) {
+       items.add(new Item(name, description));
+    }
+
+    public String getItems() {
+        return "In the room you see... " + items.toString();
+    }
 }
