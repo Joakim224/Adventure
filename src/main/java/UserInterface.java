@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class UserInterface {
     Scanner scanner = new Scanner(System.in);
     private Adventure adventure;
@@ -30,12 +29,12 @@ public class UserInterface {
     public void direction() {
         String input = "";
         while (!input.equals("exit")) {
-            input = scanner.nextLine().trim().toLowerCase();
+            input = scanner.nextLine();
             switch (input) {
                 case "go south":
                     System.out.println("Going South");
                     adventure.goSouth();
-                    System.out.println(adventure.getCurrentRoom().getName() + adventure.getCurrentRoom().getDescription());
+                    System.out.println(adventure.getCurrentRoom().getName() + adventure.getCurrentRoom().getDescription() + adventure.getCurrentRoom().getItems());
                     break;
                 case "go north":
                     System.out.println("Going North");
