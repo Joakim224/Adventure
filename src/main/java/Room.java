@@ -61,4 +61,18 @@ public class Room {
     public String getItems() {
         return "In the room you see... " + items.toString();
     }
+
+    public void removeItem (String itemName) {
+        items.remove(findItem(itemName));
+
+    }
+    public Item findItem(String name){
+        for (Item item : items) {
+            if (item.getitemName().equalsIgnoreCase(name))
+                return item;
+
+        }
+        return null;
+    }
+
 }

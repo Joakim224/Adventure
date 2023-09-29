@@ -67,6 +67,10 @@ public class UserInterface {
                     System.out.println(adventure.currentRoom().getDescription());
                     break;
 
+                case "take":
+                    adventure.getCurrentRoom().removeItem();
+                    break;
+
                 case "exit":
                     endProgram();
                     return;

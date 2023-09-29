@@ -1,14 +1,14 @@
 public class Item {
-    private String name;
+    private String itemName;
     private String description;
 
     public Item(String name, String description) {
-        this.name = name;
+        this.itemName = name;
         this.description = description;
     }
 
-    public String getName() {
-        return name;
+    public String getitemName() {
+        return itemName;
     }
 
     public String getDescription() {
@@ -16,7 +16,7 @@ public class Item {
     }
 
     public void setName() {
-        this.name = name;
+        this.itemName = itemName;
     }
 
     public void setDescription() {
@@ -25,6 +25,6 @@ public class Item {
 
     @Override
     public String toString() {
-        return name + " " + description;
+        return itemName + " " + description;
     }
 }

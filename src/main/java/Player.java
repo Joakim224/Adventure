@@ -51,8 +51,14 @@ public class Player {
             return false;
         }
     }
-    public Item take(String itemName){
-        
+    public void addItem(Item item){
+        inventory.add(item);
+    }
+
+    public Item takeItem(String itemName) {
+        Item pickeditem = getCurrentRoom().findItem(itemName);
+        addItem(pickeditem);
+
     }
 }
 
