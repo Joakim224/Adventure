@@ -14,6 +14,8 @@ public class PlayerTest {
         // Arrange
         Room room = new Room("testroom", "test");
 
+        // test
+
         Player player = new Player();
         player.setCurrentRoom(room);
 
