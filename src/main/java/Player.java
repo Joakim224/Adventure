@@ -1,3 +1,4 @@
+import java.beans.beancontext.BeanContextChild;
 import java.util.ArrayList;
 
 public class Player {
@@ -62,6 +63,15 @@ public class Player {
 
     public ArrayList<Item> getInventory() {
         return inventory;
+    }
+
+    public void printInventory() {
+        if (inventory.isEmpty()) {
+            System.out.println("Your inventory is empty...");
+        } else {
+            for (Item item : inventory)
+                System.out.println(item);
+        }
     }
 
     public Item takeItem(String itemName) {

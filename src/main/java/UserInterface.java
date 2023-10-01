@@ -22,7 +22,7 @@ public class UserInterface {
         System.out.println("Menu: " +
                 "\nType GO + the direction you want to move towards (North, South, East, West)" +
                 "\nType HELP to display instructions and information about possible commands" +
-                "\nType LOOK to see look around you" +
+                "\nType LOOK to look around the current room you're in" +
                 "\nType EXIT to exit the game");
         direction();
     }
@@ -65,6 +65,7 @@ public class UserInterface {
                     System.out.println("Instructions:" +
                             "\nType GO + the direction you want to move towards (North, South, East, West)" +
                             "\nType LOOK to see current room" +
+                            "\nType INVENTORY to see what you currently have in your inventory" +
                             "\nType EXIT to exit the game");
                     break;
 
@@ -81,6 +82,11 @@ public class UserInterface {
                     } else {
                         System.out.println("There is no item in the room of that name.");
                     }
+                    break;
+
+                case "inventory", "Inventory", "INVENTORY":
+                    System.out.println("In your inventory is: ");
+                    adventure.PrintInventory();
                     break;
 
                 case "exit":
