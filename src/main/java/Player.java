@@ -84,12 +84,20 @@ public class Player {
     }
 
     public Item dropItem(String itemName) {
-        Item itemToDrop = getCurrentRoom().addItem(itemName);
+        Item droppedItem;
+        for (Item item : inventory) {
+            if (item.getItemName().equalsIgnoreCase(itemName)) {
+                droppedItem = item;
+                removeItem(droppedItem);
+                getCurrentRoom().addItem(itemName);
+                return droppedItem;
 
-        if (itemToDrop != null) {
-            removeItem(itemToDrop);
+            }
         }
-        return itemToDrop;
+         return null;
     }
 }
+
+
+
 

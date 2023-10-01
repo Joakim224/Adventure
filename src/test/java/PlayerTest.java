@@ -41,5 +41,21 @@ public class PlayerTest {
         ArrayList<Item> items = player.getInventory();
         Assert.assertEquals(1, items.size());
     }
+    @Test
+    public void dropItem_itemfroomroom_removefrominventory() {
+        //Arange
+        Room room = new Room("testRoom", "test");
+        room.addItem("Knife", "Sharp");
 
+        Player player = new Player();
+        player.setCurrentRoom(room);
+
+        //Act
+        player.takeItem("Knife");
+        player.dropItem("Knife");
+
+        //Assert
+        ArrayList<Item> items = player.getInventory();
+        Assert.assertEquals(0, items.size());
+    }
 }
