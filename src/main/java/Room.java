@@ -69,7 +69,16 @@ public class Room {
                 items.remove(item);
                 return item;
             }
+        }
+        return null;
+    }
 
+    public Item addItem(String itemName) {
+        for (Item item : items) {
+            if (item.getItemName().equals(itemName)) {
+                items.add(item);
+                return item;
+            }
         }
         return null;
     }

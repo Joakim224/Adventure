@@ -1,5 +1,3 @@
-import javax.swing.plaf.PanelUI;
-
 public class Adventure {
     private Player player = new Player();
     private Map map = new Map();
@@ -44,6 +42,10 @@ public class Adventure {
 
     public void PrintInventory() {
         player.printInventory();
+    }
+
+    public Item dropItem(String itemName) {
+        return player.dropItem(itemName);
     }
 }
 

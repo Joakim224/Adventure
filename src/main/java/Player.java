@@ -82,5 +82,14 @@ public class Player {
         }
         return takenItem;
     }
+
+    public Item dropItem(String itemName) {
+        Item itemToDrop = getCurrentRoom().addItem(itemName);
+
+        if (itemToDrop != null) {
+            removeItem(itemToDrop);
+        }
+        return itemToDrop;
+    }
 }
 

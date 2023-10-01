@@ -30,7 +30,7 @@ public class UserInterface {
     public void direction() {
         String input = "";
         while (!input.equals("exit")) {
-            input = scanner.nextLine();
+            input = scanner.nextLine().trim().toLowerCase();
             String[] inputSplit = input.split("\\s+");
             String command = inputSplit[0];
             if (inputSplit.length > 1) {
@@ -61,7 +61,7 @@ public class UserInterface {
                     System.out.println(adventure.getCurrentRoom().getName() + adventure.getCurrentRoom().getDescription() + adventure.getCurrentRoom().getItems());
                     break;
 
-                case "help":
+                case "HELP", "help":
                     System.out.println("Instructions:" +
                             "\nType GO + the direction you want to move towards (North, South, East, West)" +
                             "\nType LOOK to see current room" +
@@ -69,13 +69,13 @@ public class UserInterface {
                             "\nType EXIT to exit the game");
                     break;
 
-                case "look":
+                case "LOOK", "look":
                     System.out.println(adventure.currentRoom().getName());
                     System.out.println(adventure.currentRoom().getDescription());
                     System.out.println(adventure.currentRoom().getItems());
                     break;
 
-                case "take":
+                case "TAKE", "take":
                     Item itemTaken = adventure.takeItem(input);
                     if (itemTaken != null) {
                         System.out.println("You pick up a: " + input);
@@ -84,15 +84,23 @@ public class UserInterface {
                     }
                     break;
 
-                case "inventory", "Inventory", "INVENTORY":
+                case "DROP", "drop":
+                    Item itemDropped = adventure.dropItem(input);
+                    if (itemDropped != null) {
+                        System.out.println("You drop a: " + input);
+                    } else {
+                        System.out.println("There is no item in your inventory of that name.");
+                    }
+                    break;
+
+                case "INVENTORY", "Inventory", "inventory":
                     System.out.println("In your inventory is: ");
                     adventure.PrintInventory();
                     break;
 
-                case "exit":
+                case "EXIT", "exit":
                     endProgram();
                     return;
-
 
                 default:
                     System.out.println("Invalid choice, try again");
