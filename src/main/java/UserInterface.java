@@ -28,11 +28,11 @@ public class UserInterface {
     }
 
     public void direction() {
-        String input = "";
+        String input = " ";
         while (!input.equals("exit")) {
             input = scanner.nextLine().trim().toLowerCase();
             String[] inputSplit = input.split("\\s+");
-            String command = inputSplit[0];
+            String command = inputSplit[1];
             if (inputSplit.length > 1) {
                 input = inputSplit[1];
             }
