@@ -33,21 +33,11 @@ public class UserInterface {
             input = scanner.nextLine().trim().toLowerCase();
             String[] inputSplit = input.split("\\s+");
             String command = inputSplit[0];
-
-        String argument = "";
-            for (int i = 1; i < inputSplit.length; i++) {
-                argument += inputSplit[1] + " ";
-            }
-        argument = argument.trim().toLowerCase();
-
-            /*if (inputSplit.length > 1) {
+            if (inputSplit.length > 1) {
                 input = inputSplit[1];
-            }*/
-
+            }
 
             switch (command) {
-                case "go":
-                    switch (argument) {
                         case "go south", "s", "S", "south":
                             System.out.println("Going South");
                             adventure.goSouth();
@@ -116,7 +106,6 @@ public class UserInterface {
                         default:
                             System.out.println("Invalid choice, try again");
                             break;
-                    }
             }
         }
     }
