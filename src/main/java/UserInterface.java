@@ -32,9 +32,9 @@ public class UserInterface {
         while (!input.equals("exit")) {
             input = scanner.nextLine().trim().toLowerCase();
             String[] inputSplit = input.split("\\s+");
-            String command = inputSplit[1];
+            String command = inputSplit[0];
             if (inputSplit.length > 1) {
-                input = inputSplit[1];
+                input = inputSplit[1s];
             }
             switch (command) {
                 case "go south", "s", "S", "south":
