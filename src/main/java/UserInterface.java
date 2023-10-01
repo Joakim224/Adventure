@@ -34,7 +34,7 @@ public class UserInterface {
             String[] inputSplit = input.split("\\s+");
             String command = inputSplit[0];
             if (inputSplit.length > 1) {
-                input = inputSplit[1s];
+                input = inputSplit[1];
             }
             switch (command) {
                 case "go south", "s", "S", "south":
