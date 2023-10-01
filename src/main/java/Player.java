@@ -1,4 +1,3 @@
-import java.beans.beancontext.BeanContextChild;
 import java.util.ArrayList;
 
 public class Player {
@@ -89,15 +88,11 @@ public class Player {
             if (item.getItemName().equalsIgnoreCase(itemName)) {
                 droppedItem = item;
                 removeItem(droppedItem);
-                getCurrentRoom().addItem(itemName);
+                getCurrentRoom().addItem(droppedItem.getItemName(), droppedItem.getItemDescription());;
                 return droppedItem;
 
             }
         }
-         return null;
+        return null;
     }
 }
-
-
-
-
