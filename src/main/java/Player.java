@@ -68,6 +68,7 @@ public class Player {
         if (inventory.isEmpty()) {
             System.out.println("Your inventory is empty...");
         } else {
+            System.out.println("In your inventory is: ");
             for (Item item : inventory)
                 System.out.println(item);
         }
@@ -88,7 +89,7 @@ public class Player {
             if (item.getItemName().equalsIgnoreCase(itemName)) {
                 droppedItem = item;
                 removeItem(droppedItem);
-                getCurrentRoom().addItem(droppedItem.getItemName(), droppedItem.getItemDescription());;
+                currentRoom.addItem(item);
                 return droppedItem;
 
             }
