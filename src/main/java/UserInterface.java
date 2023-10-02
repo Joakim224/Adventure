@@ -95,7 +95,6 @@ public class UserInterface {
                             break;
 
                         case "INVENTORY", "Inventory", "inventory":
-                            System.out.println("In your inventory is: ");
                             adventure.PrintInventory();
                             break;
 
