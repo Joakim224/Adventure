@@ -58,6 +58,9 @@ public class Room {
     public void createItem(String name, String description) {
         items.add(new Item(name, description));
     }
+    public void createFood(String name, String description, int healPoints){
+        items.add(new Food(name, description,healPoints));
+    }
 
     public String getItems() {
         return "In the room you see... " + items.toString();

@@ -5,6 +5,18 @@ public class Player {
     private Room currentRoom;
     private ArrayList<Item> inventory = new ArrayList<>();
 
+    public Player(int health) {
+        this.health = health;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setPlayerHealth(int health) {
+        this.health = health;
+    }
+
     public Room getCurrentRoom() {
         return currentRoom;
     }
@@ -61,6 +73,15 @@ public class Player {
         inventory.remove(item);
     }
 
+    public Item searchInventory(String name) {
+        for (Item item : inventory) {
+            if (item.getItemName().equalsIgnoreCase(name)) {
+                return item;
+            }
+        }
+        return null;
+    }
+
     public ArrayList<Item> getInventory() {
         return inventory;
     }
@@ -95,5 +116,19 @@ public class Player {
             }
         }
         return null;
+    }
+
+    public ReturnMessage eatFood(String itemName) {
+        Item item = searchInventory(itemName);
+        if (item instanceof Food) {
+            removeItem(item);
+            health += ((Food)item).getHealpoints();
+            return ReturnMessage.OK;
+        } else {
+            if (item == null) {
+                return ReturnMessage.NOT_FOUND;
+            }
+        }
+        return ReturnMessage.CANT;
     }
 }

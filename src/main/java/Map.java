@@ -25,11 +25,14 @@ public class Map {
         room2.createItem("ring", "gives plus 15 ability power and 70 health points");
 
         room3.setSouth(room6);
-        room3.setWest(room4);
+        room3.setWest(room2);
+        room3.createFood("apple", "gives 10 points of health", 10);
 
         room4.setNorth(room1);
         room4.setSouth(room7);
         room4.createItem("sword", "deals 15 attack damage each attack");
+
+        room5.setSouth(room8);
 
         room6.setNorth(room3);
         room6.setSouth(room9);

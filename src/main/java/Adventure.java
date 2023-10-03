@@ -1,5 +1,5 @@
 public class Adventure {
-    private Player player = new Player();
+    private Player player = new Player(100);
     private Map map = new Map();
 
     public Adventure() {
@@ -55,5 +55,8 @@ public class Adventure {
 
     public Item dropItem(String itemName) {
         return player.dropItem(itemName);
+    }
+    public ReturnMessage eatFood(String itemName){
+        return player.eatFood(itemName);
     }
 }
