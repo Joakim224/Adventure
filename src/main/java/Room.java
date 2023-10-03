@@ -60,7 +60,6 @@ public class Room {
     }
 
     public String getItems() {
-
         return "In the room you see... " + items.toString();
     }
 

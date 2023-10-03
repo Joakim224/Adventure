@@ -46,23 +46,24 @@ public class UserInterface {
                                 "\nDROP         to drop an item inside a room" +
                                 "\nINVENTORY    to look in your inventory");
                         break;
-
                     }
                     case "look": {
                         System.out.println(adventure.currentRoomDescription());
                         break;
-
                     }
                     case "exit": {
                         System.exit(0);
                     }
                     case "inventory": {
-                        System.out.println("In your inventory is:");
                         adventure.PrintInventory();
                         break;
-
                     }
-                    default: System.out.println("Invalid input, type 'help' for list of commands");
+                    case "HEALTH", "health": {
+                        System.out.println("You currently have " + adventure.getPlayer().getHealth() + " health");
+                        break;
+                    }
+                    default:
+                        System.out.println("Invalid input, type 'help' for list of commands");
                 }
             }
             if (commands.length == 2)
@@ -94,15 +95,14 @@ public class UserInterface {
 
                             }
                             default:
-                                System.out.println("Invalid input");
+                                System.out.println("Invalid input, type 'help' for list of commands");
                         }
                         break;
                     }
-
-                    case "TAKE", "take":{
+                    case "TAKE", "take": {
                         Item itemTaken = adventure.takeItem(commands[1]);
                         if (itemTaken != null) {
-                            System.out.println("You pick up a: " + input);
+                            System.out.println("You pick up a: " + commands[1]);
                         } else {
                             System.out.println("There is no item in the room of that name.");
                         }
@@ -111,17 +111,33 @@ public class UserInterface {
                     case "DROP", "drop": {
                         Item itemDropped = adventure.dropItem(commands[1]);
                         if (itemDropped != null) {
-                            System.out.println("You drop a: " + input);
+                            System.out.println("You drop a: " + commands[1]);
                         } else {
                             System.out.println("There is no item in your inventory of that name.");
                         }
                         break;
                     }
-                        default:
-                            System.out.println("Invalid input, type 'help' for list of commands");
+                    case "Eat", "eat": {
+                        ReturnMessage itemEaten = adventure.eatFood(commands[1]);
+                        switch (itemEaten) {
+                            case OK:
+                                System.out.println("Eating " + commands[1]);
+                                System.out.println("You now have " + adventure.getPlayer().getHealth() + " healthpoints");
+                                break;
+                            case CANT:
+                                System.out.println("You can't eat " + commands[1]);
+                                break;
+                            case NOT_FOUND:
+                                System.out.println("No " + commands[1] + " was not found in your inventory");
+                                break;
+                        }
+                        break;
+                    }
+                    default:
+                        System.out.println("Invalid input, type 'help' for list of commands");
 
+                    }
                 }
-
         }
     }
 }

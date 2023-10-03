@@ -33,6 +33,7 @@ public class Map {
 
         room6.setNorth(room3);
         room6.setSouth(room9);
+        room6.createFood("stew", "gives 15 points of health", 15);
 
         room7.setNorth(room4);
         room7.setEast(room8);

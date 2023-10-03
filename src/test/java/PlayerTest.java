@@ -3,7 +3,6 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-
 public class PlayerTest {
 
 
@@ -13,7 +12,7 @@ public class PlayerTest {
         // Arrange
         Room room = new Room("testroom", "test");
 
-        Player player = new Player();
+        Player player = new Player(100);
         player.setCurrentRoom(room);
 
         // Act
@@ -25,12 +24,12 @@ public class PlayerTest {
     }
 
     @Test
-    public void takeItem_itemfroomroom_Addtoinventory() {
+    public void takeItem_itemFroomRoom_AddToInventory() {
         //Arange
         Room room = new Room("testRoom", "test");
         room.createItem("Knife", "Sharp");
 
-        Player player = new Player();
+        Player player = new Player(100);
         player.setCurrentRoom(room);
 
         //Act
@@ -42,12 +41,12 @@ public class PlayerTest {
     }
 
     @Test
-    public void dropItem_itemfroomroom_removefrominventory() {
+    public void dropItem_itemFroomRoom_removeFromInventory() {
         //Arange
         Room room = new Room("testRoom", "test");
         room.createItem("Knife", "Sharp");
 
-        Player player = new Player();
+        Player player = new Player(100);
         player.setCurrentRoom(room);
 
         //Act
