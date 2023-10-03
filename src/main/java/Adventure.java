@@ -8,6 +8,10 @@ public class Adventure {
         player.setCurrentRoom(map.getStarterRoom());
     }
 
+    public Player getPlayer(){
+        return player;
+    }
+
     public void createMap() {
         map.createMap();
     }
