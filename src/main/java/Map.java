@@ -18,34 +18,34 @@ public class Map {
 
         room1.setSouth(room4);
         room1.setEast(room2);
-        room1.addItem("lantern", "lights up the current room you're in");
+        room1.createItem("lantern", "lights up the current room you're in");
 
         room2.setWest(room1);
         room2.setEast(room3);
-        room2.addItem("ring", "gives plus 15 ability power and 70 health points");
+        room2.createItem("ring", "gives plus 15 ability power and 70 health points");
 
         room3.setSouth(room6);
         room3.setWest(room4);
 
         room4.setNorth(room1);
         room4.setSouth(room7);
-        room4.addItem("sword", "deals 15 attack damage each attack");
+        room4.createItem("sword", "deals 15 attack damage each attack");
 
         room6.setNorth(room3);
         room6.setSouth(room9);
 
         room7.setNorth(room4);
         room7.setEast(room8);
-        room7.addItem("key", "opens the door to 'The Throne Room'");
+        room7.createItem("key", "opens the door to 'The Throne Room'");
 
         room8.setNorth(room5);
         room8.setEast(room9);
         room8.setWest(room7);
-        room8.addItem("potion", "restores 20 points of health");
+        room8.createItem("potion", "restores 20 points of health");
 
         room9.setWest(room8);
         room9.setNorth(room6);
-        room9.addItem("orb", "gives plus 70 ability power and 50 health points");
+        room9.createItem("orb", "gives plus 70 ability power and 50 health points");
 
         starterRoom = room1;
 

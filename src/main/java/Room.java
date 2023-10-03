@@ -55,11 +55,12 @@ public class Room {
         return name;
     }
 
-    public void addItem(String name, String description) {
+    public void createItem(String name, String description) {
         items.add(new Item(name, description));
     }
 
     public String getItems() {
+
         return "In the room you see... " + items.toString();
     }
 
@@ -73,13 +74,7 @@ public class Room {
         return null;
     }
 
-    public Item addItem(String itemName) {
-        for (Item item : items) {
-            if (item.getItemName().equals(itemName)) {
-                items.add(item);
-                return item;
-            }
-        }
-        return null;
+    public void addItem(Item item) {
+        items.add(item);
     }
 }

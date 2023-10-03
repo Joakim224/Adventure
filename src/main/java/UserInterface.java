@@ -31,85 +31,99 @@ public class UserInterface {
         String input = " ";
         while (!input.equals("exit")) {
             input = scanner.nextLine().trim().toLowerCase();
-            String[] inputSplit = input.split("\\s+");
-            String command = inputSplit[0];
-            if (inputSplit.length > 1) {
-                input = inputSplit[1];
+            String[] commands = input.split("\\s+");
+            String command = commands[0];
+
+            if (commands.length == 1) {
+
+                switch (command) {
+                    case "help", "h": {
+                        System.out.println("Commands:" +
+                                "\nGO           go north, go south, go east, go west - you can also use N, S, E and W" +
+                                "\nEXIT         to exit the program" +
+                                "\nLOOK         to take another look around the room" +
+                                "\nTAKE         to pickup an object from a room" +
+                                "\nDROP         to drop an item inside a room" +
+                                "\nINVENTORY    to look in your inventory");
+                        break;
+
+                    }
+                    case "look": {
+                        System.out.println(adventure.currentRoomDescription());
+                        break;
+
+                    }
+                    case "exit": {
+                        System.exit(0);
+                    }
+                    case "inventory": {
+                        System.out.println("In your inventory is:");
+                        adventure.PrintInventory();
+                        break;
+
+                    }
+                    default: System.out.println("Invalid input, type 'help' for list of commands");
+                }
             }
+            if (commands.length == 2)
+                switch (commands[0]) {
 
-            switch (command) {
-                        case "go south", "s", "S", "south":
-                            System.out.println("Going South");
-                            adventure.goSouth();
-                            System.out.println(adventure.getCurrentRoom().getName() + adventure.getCurrentRoom().getDescription() + adventure.getCurrentRoom().getItems());
-                            break;
-                        case "go north", "n", "N", "north":
-                            System.out.println("Going North");
-                            adventure.goNorth();
-                            System.out.println(adventure.getCurrentRoom().getName() + adventure.getCurrentRoom().getDescription() + adventure.getCurrentRoom().getItems());
-                            break;
-
-                        case "go west", "w", "W", "west":
-                            System.out.println("Going West");
-                            adventure.goWest();
-                            System.out.println(adventure.getCurrentRoom().getName() + adventure.getCurrentRoom().getDescription() + adventure.getCurrentRoom().getItems());
-
-                            break;
-
-                        case "go east", "e", "E", "east":
-                            System.out.println("Going East");
-                            adventure.goEast();
-                            System.out.println(adventure.getCurrentRoom().getName() + adventure.getCurrentRoom().getDescription() + adventure.getCurrentRoom().getItems());
-                            break;
-
-                        case "HELP", "help":
-                            System.out.println("Instructions:" +
-                                    "\nType GO + the direction you want to move towards (North, South, East, West)" +
-                                    "\nType LOOK to see current room" +
-                                    "\nType INVENTORY to see what you currently have in your inventory" +
-                                    "\nType EXIT to exit the game");
-                            break;
-
-                        case "LOOK", "look":
-                            System.out.println(adventure.currentRoom().getName());
-                            System.out.println(adventure.currentRoom().getDescription());
-                            System.out.println(adventure.currentRoom().getItems());
-                            break;
-
-                        case "TAKE", "take":
-                            Item itemTaken = adventure.takeItem(input);
-                            if (itemTaken != null) {
-                                System.out.println("You pick up a: " + input);
-                            } else {
-                                System.out.println("There is no item in the room of that name.");
+                    case "go": {
+                        switch (commands[1]) {
+                            case "north", "n": {
+                                adventure.goNorth();
+                                System.out.println(adventure.currentRoomDescription());
+                                break;
                             }
-                            break;
+                            case "south", "s": {
+                                adventure.goSouth();
+                                System.out.println(adventure.currentRoomDescription());
+                                break;
 
-                        case "DROP", "drop":
-                            Item itemDropped = adventure.dropItem(input);
-                            if (itemDropped != null) {
-                                System.out.println("You drop a: " + input);
-                            } else {
-                                System.out.println("There is no item in your inventory of that name.");
                             }
-                            break;
+                            case "east", "e": {
+                                adventure.goEast();
+                                System.out.println(adventure.currentRoomDescription());
+                                break;
 
-                        case "INVENTORY", "Inventory", "inventory":
-                            adventure.PrintInventory();
-                            break;
+                            }
+                            case "west", "w": {
+                                adventure.goWest();
+                                System.out.println(adventure.currentRoomDescription());
+                                break;
 
-                        case "EXIT", "exit":
-                            endProgram();
-                            return;
+                            }
+                            default:
+                                System.out.println("Invalid input");
+                        }
+                        break;
+                    }
 
+                    case "TAKE", "take":{
+                        Item itemTaken = adventure.takeItem(commands[1]);
+                        if (itemTaken != null) {
+                            System.out.println("You pick up a: " + input);
+                        } else {
+                            System.out.println("There is no item in the room of that name.");
+                        }
+                        break;
+                    }
+                    case "DROP", "drop": {
+                        Item itemDropped = adventure.dropItem(commands[1]);
+                        if (itemDropped != null) {
+                            System.out.println("You drop a: " + input);
+                        } else {
+                            System.out.println("There is no item in your inventory of that name.");
+                        }
+                        break;
+                    }
                         default:
-                            System.out.println("Invalid choice, try again");
-                            break;
-            }
+                            System.out.println("Invalid input, type 'help' for list of commands");
+
+                }
+
         }
     }
-
-    public void endProgram() {
-        System.out.println("Game ended.");
-    }
 }
+
+

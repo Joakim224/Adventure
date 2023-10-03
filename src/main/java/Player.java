@@ -75,8 +75,7 @@ public class Player {
     }
 
     public Item takeItem(String itemName) {
-        Item takenItem = getCurrentRoom().removeItem(itemName);
-
+        Item takenItem = currentRoom.removeItem(itemName);
         if (takenItem != null) {
             addItem(takenItem);
         }
@@ -89,7 +88,7 @@ public class Player {
             if (item.getItemName().equalsIgnoreCase(itemName)) {
                 droppedItem = item;
                 removeItem(droppedItem);
-                getCurrentRoom().addItem(droppedItem.getItemName(), droppedItem.getItemDescription());;
+                currentRoom.addItem(item);
                 return droppedItem;
 
             }

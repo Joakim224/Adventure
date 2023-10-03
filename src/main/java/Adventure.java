@@ -16,6 +16,10 @@ public class Adventure {
         return player.getCurrentRoom();
     }
 
+    public String currentRoomDescription() {
+        return player.getCurrentRoom().getName() + player.getCurrentRoom().getDescription() + player.getCurrentRoom().getItems();
+    }
+
     public boolean goSouth() {
         return player.goSouth();
     }
@@ -27,6 +31,7 @@ public class Adventure {
     public boolean goWest() {
         return player.goWest();
     }
+
 
     public boolean goEast() {
         return player.goEast();
