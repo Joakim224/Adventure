@@ -68,14 +68,14 @@ public class Player {
         if (inventory.isEmpty()) {
             System.out.println("Your inventory is empty...");
         } else {
-            System.out.println("In your inventory is: ");
             for (Item item : inventory)
                 System.out.println(item);
         }
     }
 
     public Item takeItem(String itemName) {
-        Item takenItem = currentRoom.removeItem(itemName);
+        Item takenItem = getCurrentRoom().removeItem(itemName);
+
         if (takenItem != null) {
             addItem(takenItem);
         }
