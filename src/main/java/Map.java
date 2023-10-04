@@ -52,7 +52,5 @@ public class Map {
         room9.createItem("orb", "gives plus 70 ability power and 50 health points");
 
         starterRoom = room1;
-
-
     }
 }

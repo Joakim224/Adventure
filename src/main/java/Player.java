@@ -123,6 +123,12 @@ public class Player {
         if (item instanceof Food) {
             removeItem(item);
             health += ((Food)item).getHealpoints();
+            if (health > 100) {
+                setPlayerHealth(100);
+            } if (health < 0) {
+                System.out.println("You died.");
+                System.exit(0);
+            }
             return ReturnMessage.OK;
         } else {
             if (item == null) {

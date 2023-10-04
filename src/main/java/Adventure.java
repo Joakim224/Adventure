@@ -49,14 +49,15 @@ public class Adventure {
         return player.takeItem(itemName);
     }
 
-    public void PrintInventory() {
-        player.printInventory();
-    }
-
     public Item dropItem(String itemName) {
         return player.dropItem(itemName);
     }
     public ReturnMessage eatFood(String itemName){
         return player.eatFood(itemName);
     }
+
+    public void PrintInventory() {
+        player.printInventory();
+    }
+
 }

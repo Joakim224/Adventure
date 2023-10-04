@@ -110,12 +110,12 @@ public class PlayerTest {
         room.createFood("Apple", "gives 10 health points", 10);
 
         //Act
-        Player player = new Player(100);
+        Player player = new Player(90);
         player.setCurrentRoom(room);
         player.takeItem("Apple");
         player.eatFood("Apple");
         //Assert
 
-        Assert.assertEquals(110,player.getHealth());
+        Assert.assertEquals(100,player.getHealth());
     }
 }
