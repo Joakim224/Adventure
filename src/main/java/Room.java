@@ -58,8 +58,16 @@ public class Room {
     public void createItem(String name, String description) {
         items.add(new Item(name, description));
     }
-    public void createFood(String name, String description, int healPoints){
-        items.add(new Food(name, description,healPoints));
+
+    public void createFood(String name, String description, int healPoints) {
+        items.add(new Food(name, description, healPoints));
+    }
+
+    public void createMeleeWeapon(String name, String description, int damage) {
+        items.add(new MeleeWeapon(name, description, damage));
+    }
+    public void createRangedWeapon(String name, String description, int damage, int ammo) {
+        items.add(new RangedWeapon(name, description, damage, ammo));
     }
 
     public String getItems() {

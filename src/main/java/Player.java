@@ -3,10 +3,12 @@ import java.util.ArrayList;
 public class Player {
     private int health;
     private Room currentRoom;
-    private ArrayList<Item> inventory = new ArrayList<>();
+    private ArrayList<Item> inventory;
+    private Weapon currentWeapon;
 
     public Player(int health) {
         this.health = health;
+        this.inventory = new ArrayList<>();
     }
 
     public int getHealth() {
@@ -24,6 +26,15 @@ public class Player {
     public void setCurrentRoom(Room currentRoom) {
         this.currentRoom = currentRoom;
     }
+
+    public Weapon getCurrentWeapon() {
+        return currentWeapon;
+    }
+
+    public void setCurrentWeapon() {
+        this.currentWeapon = currentWeapon;
+    }
+
 
     public boolean goSouth() {
         if (currentRoom.getSouth() != null) {
@@ -122,10 +133,11 @@ public class Player {
         Item item = searchInventory(itemName);
         if (item instanceof Food) {
             removeItem(item);
-            health += ((Food)item).getHealpoints();
+            health += ((Food) item).getHealpoints();
             if (health > 100) {
                 setPlayerHealth(100);
-            } if (health < 0) {
+            }
+            if (health < 0) {
                 System.out.println("You died.");
                 System.exit(0);
             }
@@ -136,5 +148,52 @@ public class Player {
             }
         }
         return ReturnMessage.CANT;
+    }
+
+    public ReturnMessage equipWeapon(String itemName) {
+        Item equippedItem = searchInventory(itemName);
+        if (equippedItem instanceof Weapon) {
+            currentWeapon = (Weapon) equippedItem;
+            removeItem(equippedItem);
+            return ReturnMessage.OK;
+        } else {
+            if (equippedItem == null) {
+                return ReturnMessage.NOT_FOUND;
+            }
+        }
+        return ReturnMessage.CANT;
+    }
+
+    public ReturnMessage unEquipWeapon() {
+        if (currentWeapon != null) {
+            addItem(currentWeapon);
+            return ReturnMessage.OK;
+        } else {
+            return ReturnMessage.CANT;
+        }
+    }
+
+    public ReturnMessage attack() {
+        if (currentWeapon != null) {
+            if (currentWeapon instanceof MeleeWeapon) {
+                System.out.println("You attack!");
+            }
+            if (currentWeapon instanceof RangedWeapon) {
+                RangedWeapon rangedWeapon = (RangedWeapon) currentWeapon;
+                int currentAmmo = rangedWeapon.getAmmo();
+                if (currentAmmo > 0) {
+                    rangedWeapon.setAmmo(currentAmmo - 1);
+                    return ReturnMessage.OK;
+                } else {
+                    System.out.println("Out of ammo!");
+                }
+            } else {
+                return ReturnMessage.NOT_FOUND;
+            }
+        } else {
+            System.out.println("You don't have a weapon equipped");
+            return ReturnMessage.CANT;
+        }
+        return null;
     }
 }

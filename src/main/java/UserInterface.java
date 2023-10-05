@@ -62,6 +62,20 @@ public class UserInterface {
                         System.out.println("You currently have " + adventure.getPlayer().getHealth() + " health");
                         break;
                     }
+                    case "attack": {
+                        ReturnMessage attack = adventure.attack();
+                        switch (attack) {
+                            case OK:
+                                break;
+                            case CANT:
+                                break;
+                            case NOT_FOUND:
+                                break;
+                        }
+                        break;
+                    }
+
+
                     default:
                         System.out.println("Invalid input, type 'help' for list of commands");
                 }
@@ -108,6 +122,38 @@ public class UserInterface {
                         }
                         break;
                     }
+                    case "equip", "Equip": {
+                        ReturnMessage itemEquip = adventure.equipWeapon(commands[1]);
+                        switch (itemEquip) {
+                            case OK:
+                                System.out.println(" you equipped " + commands[1]);
+                                adventure.getPlayer().equipWeapon(commands[1]);
+                                break;
+                            case CANT:
+                                System.out.println("you cant equipped " + commands[1]);
+                                break;
+                            case NOT_FOUND:
+                                System.out.println("No " + commands[1] + " was not found in your inventory ");
+                                break;
+                        }
+                        break;
+                    }
+                        case "unequip", "unEquip":{
+                            ReturnMessage itemunEquip = adventure.unEquipWeapon(commands[1]);
+                            switch (itemunEquip){
+                                case OK:
+                                    System.out.println(" you unEquip " + commands[1]);
+                                    adventure.getPlayer().unEquipWeapon();
+                                    break;
+                                case CANT:
+                                    System.out.println(" you cant unEquip " + commands[1]);
+                                    break;
+                                case NOT_FOUND:
+                                    System.out.println("No " + commands[1] + "was found in your inventory ");
+                                    break;
+                            }
+                            break;
+                    }
                     case "DROP", "drop": {
                         Item itemDropped = adventure.dropItem(commands[1]);
                         if (itemDropped != null) {
@@ -136,10 +182,10 @@ public class UserInterface {
                     default:
                         System.out.println("Invalid input, type 'help' for list of commands");
 
-                    }
                 }
         }
     }
+}
 
 
 

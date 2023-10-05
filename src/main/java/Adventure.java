@@ -8,7 +8,7 @@ public class Adventure {
         player.setCurrentRoom(map.getStarterRoom());
     }
 
-    public Player getPlayer(){
+    public Player getPlayer() {
         return player;
     }
 
@@ -21,7 +21,9 @@ public class Adventure {
     }
 
     public String currentRoomDescription() {
-        return player.getCurrentRoom().getName() + player.getCurrentRoom().getDescription() + player.getCurrentRoom().getItems();
+        return player.getCurrentRoom().getName() +
+                player.getCurrentRoom().getDescription() +
+                player.getCurrentRoom().getItems();
     }
 
     public boolean goSouth() {
@@ -52,7 +54,8 @@ public class Adventure {
     public Item dropItem(String itemName) {
         return player.dropItem(itemName);
     }
-    public ReturnMessage eatFood(String itemName){
+
+    public ReturnMessage eatFood(String itemName) {
         return player.eatFood(itemName);
     }
 
