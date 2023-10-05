@@ -30,7 +30,7 @@ public class Map {
 
         room4.setNorth(room1);
         room4.setSouth(room7);
-        room4.createItem("sword", "deals 15 attack damage each attack");
+        room4.createMeleeWeapon("sword", "deals 15 attack damage each attack", 15);
 
         room5.setSouth(room8);
 
@@ -46,6 +46,7 @@ public class Map {
         room8.setEast(room9);
         room8.setWest(room7);
         room8.createItem("potion", "restores 20 points of health");
+        room8.createRangedWeapon("bow", "deals 25 damage with each arrow", 25, 5);
 
         room9.setWest(room8);
         room9.setNorth(room6);
