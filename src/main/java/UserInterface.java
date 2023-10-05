@@ -39,12 +39,16 @@ public class UserInterface {
                 switch (command) {
                     case "help", "h": {
                         System.out.println("Commands:" +
-                                "\nGO           go north, go south, go east, go west - you can also use N, S, E and W" +
-                                "\nEXIT         to exit the program" +
-                                "\nLOOK         to take another look around the room" +
-                                "\nTAKE         to pickup an object from a room" +
-                                "\nDROP         to drop an item inside a room" +
-                                "\nINVENTORY    to look in your inventory");
+                                "\nGO            go north, go south, go east, go west - you can also use N, S, E and W" +
+                                "\nEXIT          to exit the program" +
+                                "\nLOOK          to take another look around the room" +
+                                "\nTAKE          to pickup an object from a room" +
+                                "\nDROP          to drop an item inside a room" +
+                                "\nEAT           to eat a food item from your inventory" +
+                                "\nINVENTORY     to look in your inventory" +
+                                "\nHEALTH        to get your current hp" +
+                                "\nEQUIP/UNEQUIP to equip or unequip weapons from your inventory" +
+                                "\nATTACk        to attack with your equipped weapon");
                         break;
                     }
                     case "look": {
@@ -126,7 +130,7 @@ public class UserInterface {
                         ReturnMessage itemEquip = adventure.equipWeapon(commands[1]);
                         switch (itemEquip) {
                             case OK:
-                                System.out.println(" you equipped " + commands[1]);
+                                System.out.println("you equipped " + commands[1]);
                                 adventure.getPlayer().equipWeapon(commands[1]);
                                 break;
                             case CANT:
@@ -182,7 +186,7 @@ public class UserInterface {
                     default:
                         System.out.println("Invalid input, type 'help' for list of commands");
 
-                }
+            }
         }
     }
 }

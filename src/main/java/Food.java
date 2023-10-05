@@ -12,8 +12,7 @@ public class Food extends Item {
 
     @Override
     public String toString() {
-        return "Food { " + super.toString() +
-                " - heals for " + healpoints + " points of health" +
-                " }";
+        return "Food - " + super.toString() +
+                "heals for " + healpoints + " points of health";
     }
 }

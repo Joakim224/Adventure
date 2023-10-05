@@ -26,7 +26,7 @@ public class Map {
 
         room3.setSouth(room6);
         room3.setWest(room2);
-        room3.createFood("apple", "gives 10 points of health", 10);
+        room3.createFood("apple", "gives healthpoints: ", 10);
 
         room4.setNorth(room1);
         room4.setSouth(room7);
@@ -36,7 +36,7 @@ public class Map {
 
         room6.setNorth(room3);
         room6.setSouth(room9);
-        room6.createFood("stew", "gives 15 points of health", 15);
+        room6.createFood("stew", "gives healthpoints: ", 15);
 
         room7.setNorth(room4);
         room7.setEast(room8);

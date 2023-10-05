@@ -4,7 +4,7 @@ public class Adventure {
 
     public Adventure() {
         map.createMap();
-        player = new Player(100);
+        player = new Player(-11);
         player.setCurrentRoom(map.getStarterRoom());
     }
 
