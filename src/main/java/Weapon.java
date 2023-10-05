@@ -5,4 +5,10 @@ public class Weapon extends Item {
         super(itemName, itemDescription);
         this.damage = damage;
     }
+
+    public int getDamage(){
+        return damage;
+    }
+
+
 }
