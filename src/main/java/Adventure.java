@@ -62,5 +62,13 @@ public class Adventure {
     public void PrintInventory() {
         player.printInventory();
     }
-
+    public ReturnMessage equipWeapon(String itemName){
+        return player.equipWeapon(itemName);
+    }
+    public ReturnMessage unEquipWeapon(String itemName){
+        return player.unEquipWeapon();
+    }
+    public ReturnMessage attack(){
+        return player.attack();
+    }
 }

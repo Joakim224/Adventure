@@ -118,4 +118,23 @@ public class PlayerTest {
 
         Assert.assertEquals(100,player.getHealth());
     }
+    @Test
+    public void test_equip_weapon_from_item(){
+        //Arange
+        Room room = new Room("testRoom", "test");
+        room.createMeleeWeapon("Sword", "Sharp", 10);
+
+        //Act
+        Player player = new Player(100);
+        player.setCurrentRoom(room);
+        player.takeItem("Sword");
+        player.equipWeapon("Sword");
+
+        //Assert
+        ReturnMessage result = player.equipWeapon("Sword");
+        Assert.assertEquals(ReturnMessage.OK, result);
+
+        
+
+    }
 }
