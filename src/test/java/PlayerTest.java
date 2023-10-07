@@ -127,7 +127,6 @@ public class PlayerTest {
         Player player = new Player(100);
         player.setCurrentRoom(room);
         player.takeItem("Sword");
-        player.equipWeapon("Sword");
 
         //Assert
         ReturnMessage result = player.equipWeapon("Sword");

@@ -140,21 +140,21 @@ public class UserInterface {
                         }
                         break;
                     }
-                        case "unequip", "unEquip":{
-                            ReturnMessage itemunEquip = adventure.unEquipWeapon(commands[1]);
-                            switch (itemunEquip){
-                                case OK:
-                                    System.out.println("You unequip " + commands[1]);
-                                    adventure.getPlayer().unEquipWeapon();
-                                    break;
-                                case CANT:
-                                    System.out.println("You cant unequip " + commands[1]);
-                                    break;
-                                case NOT_FOUND:
-                                    System.out.println("No " + commands[1] + " was found in your inventory ");
-                                    break;
-                            }
-                            break;
+                    case "unequip", "unEquip": {
+                        ReturnMessage itemunEquip = adventure.unEquipWeapon(commands[1]);
+                        switch (itemunEquip) {
+                            case OK:
+                                System.out.println("You unequip " + commands[1]);
+                                adventure.getPlayer().unEquipWeapon();
+                                break;
+                            case CANT:
+                                System.out.println("You cant unequip " + commands[1]);
+                                break;
+                            case NOT_FOUND:
+                                System.out.println("No " + commands[1] + " was found in your inventory ");
+                                break;
+                        }
+                        break;
                     }
                     case "DROP", "drop": {
                         Item itemDropped = adventure.dropItem(commands[1]);
@@ -184,7 +184,7 @@ public class UserInterface {
                     default:
                         System.out.println("Invalid input, type 'help' for list of commands");
 
-            }
+                }
         }
     }
 }
