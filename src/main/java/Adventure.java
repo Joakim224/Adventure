@@ -1,10 +1,10 @@
 public class Adventure {
-    private Player player = new Player(100);
+    private Player player;
     private Map map = new Map();
 
     public Adventure() {
         map.createMap();
-        player = new Player(-11);
+        player = new Player(100);
         player.setCurrentRoom(map.getStarterRoom());
     }
 
@@ -62,13 +62,16 @@ public class Adventure {
     public void PrintInventory() {
         player.printInventory();
     }
-    public ReturnMessage equipWeapon(String itemName){
+
+    public ReturnMessage equipWeapon(String itemName) {
         return player.equipWeapon(itemName);
     }
-    public ReturnMessage unEquipWeapon(String itemName){
+
+    public ReturnMessage unEquipWeapon(String itemName) {
         return player.unEquipWeapon();
     }
-    public ReturnMessage attack(){
+
+    public ReturnMessage attack() {
         return player.attack();
     }
 }

@@ -78,8 +78,6 @@ public class UserInterface {
                         }
                         break;
                     }
-
-
                     default:
                         System.out.println("Invalid input, type 'help' for list of commands");
                 }
@@ -130,14 +128,14 @@ public class UserInterface {
                         ReturnMessage itemEquip = adventure.equipWeapon(commands[1]);
                         switch (itemEquip) {
                             case OK:
-                                System.out.println("you equipped " + commands[1]);
+                                System.out.println("You equip " + commands[1]);
                                 adventure.getPlayer().equipWeapon(commands[1]);
                                 break;
                             case CANT:
-                                System.out.println("you cant equipped " + commands[1]);
+                                System.out.println("You cant equip " + commands[1]);
                                 break;
                             case NOT_FOUND:
-                                System.out.println("No " + commands[1] + " was not found in your inventory ");
+                                System.out.println("No " + commands[1] + " was found in your inventory ");
                                 break;
                         }
                         break;
@@ -146,14 +144,14 @@ public class UserInterface {
                             ReturnMessage itemunEquip = adventure.unEquipWeapon(commands[1]);
                             switch (itemunEquip){
                                 case OK:
-                                    System.out.println(" you unEquip " + commands[1]);
+                                    System.out.println("You unequip " + commands[1]);
                                     adventure.getPlayer().unEquipWeapon();
                                     break;
                                 case CANT:
-                                    System.out.println(" you cant unEquip " + commands[1]);
+                                    System.out.println("You cant unequip " + commands[1]);
                                     break;
                                 case NOT_FOUND:
-                                    System.out.println("No " + commands[1] + "was found in your inventory ");
+                                    System.out.println("No " + commands[1] + " was found in your inventory ");
                                     break;
                             }
                             break;
@@ -178,7 +176,7 @@ public class UserInterface {
                                 System.out.println("You can't eat " + commands[1]);
                                 break;
                             case NOT_FOUND:
-                                System.out.println("No " + commands[1] + " was not found in your inventory");
+                                System.out.println("No " + commands[1] + " was found in your inventory");
                                 break;
                         }
                         break;
@@ -190,6 +188,3 @@ public class UserInterface {
         }
     }
 }
-
-
-

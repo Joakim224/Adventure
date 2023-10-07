@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 public class PlayerTest {
 
-
     @Test
     public void takeItem_ItemReturnedFromRoomIsNull_DoNotAddToInventory() {
 
@@ -119,7 +118,7 @@ public class PlayerTest {
         Assert.assertEquals(100,player.getHealth());
     }
     @Test
-    public void test_equip_weapon_from_item(){
+    public void test_equip_weapon_from_inventory() {
         //Arange
         Room room = new Room("testRoom", "test");
         room.createMeleeWeapon("Sword", "Sharp", 10);
@@ -133,8 +132,23 @@ public class PlayerTest {
         //Assert
         ReturnMessage result = player.equipWeapon("Sword");
         Assert.assertEquals(ReturnMessage.OK, result);
+    }
 
-        
+    @Test
+    public void test_unEquip_weapon_from_inventory() {
+        //Arange
+        Room room = new Room("testRoom", "test");
+        room.createMeleeWeapon("Sword", "Sharp", 10);
 
+        //Act
+        Player player = new Player(100);
+        player.setCurrentRoom(room);
+        player.takeItem("Sword");
+        player.equipWeapon("Sword");
+        player.unEquipWeapon();
+
+        //Assert
+        ReturnMessage result = player.unEquipWeapon();
+        Assert.assertEquals(ReturnMessage.OK, result);
     }
 }
