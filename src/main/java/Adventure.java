@@ -74,4 +74,5 @@ public class Adventure {
     public ReturnMessage attack() {
         return player.attack();
     }
+
 }

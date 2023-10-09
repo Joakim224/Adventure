@@ -1,3 +1,4 @@
+import com.sun.net.httpserver.Authenticator;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -126,7 +127,7 @@ public class PlayerTest {
         //Act
         Player player = new Player(100);
         player.setCurrentRoom(room);
-        player.takeItem("Sword");
+
 
         //Assert
         ReturnMessage result = player.equipWeapon("Sword");
@@ -139,6 +140,7 @@ public class PlayerTest {
         Room room = new Room("testRoom", "test");
         room.createMeleeWeapon("Sword", "Sharp", 10);
 
+
         //Act
         Player player = new Player(100);
         player.setCurrentRoom(room);
@@ -149,5 +151,22 @@ public class PlayerTest {
         //Assert
         ReturnMessage result = player.unEquipWeapon();
         Assert.assertEquals(ReturnMessage.OK, result);
+    }
+    @Test
+    public void test_attack_enemy_with_weapon(){
+       //Arange
+        Room room = new Room("testRoom", "test");
+        room.createMeleeWeapon("Sword", "Sharp", 40);
+        room.createEnemy("Gromp", "big ass frog", 35, new MeleeWeapon("Claws", "Deals 20 dmg", 20), room);
+
+        //Act
+        Player player = new Player(100);
+        player.setCurrentRoom(room);
+        player.takeItem("Sword");
+        player.equipWeapon("Sword");
+        player.attack();
+
+        //Assert
+        ReturnMessage result = player.attack();
     }
 }
