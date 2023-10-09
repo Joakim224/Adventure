@@ -37,6 +37,29 @@ public class UserInterface {
             if (commands.length == 1) {
 
                 switch (command) {
+                    case "north", "n": {
+                        adventure.goNorth();
+                        System.out.println(adventure.currentRoomDescription());
+                        break;
+                    }
+                    case "south", "s": {
+                        adventure.goSouth();
+                        System.out.println(adventure.currentRoomDescription());
+                        break;
+
+                    }
+                    case "east", "e": {
+                        adventure.goEast();
+                        System.out.println(adventure.currentRoomDescription());
+                        break;
+
+                    }
+                    case "west", "w": {
+                        adventure.goWest();
+                        System.out.println(adventure.currentRoomDescription());
+                        break;
+                    }
+
                     case "help", "h": {
                         System.out.println("Commands:" +
                                 "\nGO            go north, go south, go east, go west - you can also use N, S, E and W" +

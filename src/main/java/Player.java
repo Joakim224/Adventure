@@ -186,6 +186,7 @@ public class Player {
                     return ReturnMessage.OK;
                 } else {
                     System.out.println("Out of ammo!");
+                    return ReturnMessage.CANT;
                 }
             } else {
                 return ReturnMessage.NOT_FOUND;
@@ -194,6 +195,5 @@ public class Player {
             System.out.println("You don't have a weapon equipped");
             return ReturnMessage.CANT;
         }
-        return null;
     }
 }

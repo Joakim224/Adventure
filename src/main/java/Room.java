@@ -8,6 +8,7 @@ public class Room {
     private String description;
     private String name;
     private ArrayList<Item> items = new ArrayList<>();
+    private ArrayList<Enemy> enemies = new ArrayList<>();
 
     public Room(String name, String description) {
         this.description = description;
@@ -71,6 +72,10 @@ public class Room {
         items.add(new RangedWeapon(name, description, damage, ammo));
     }
 
+    public void createEnemy(String name, String description, int health, Weapon weapon, Room room) {
+        enemies.add(new Enemy(name, description, health, weapon, room));
+    }
+
     public String getItems() {
         return "In the room you see... " + items.toString();
     }
@@ -87,5 +92,15 @@ public class Room {
 
     public void addItem(Item item) {
         items.add(item);
+    }
+
+    public Enemy removeEnemy(String enemyName) {
+        for (Enemy enemy : enemies) {
+            if (enemy.getName().equals(enemyName)) {
+                enemies.remove(enemy);
+                return enemy;
+            }
+        }
+        return null;
     }
 }
