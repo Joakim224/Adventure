@@ -167,6 +167,7 @@ public class PlayerTest {
         player.equipWeapon("Sword");
 
         //Assert
-        ReturnMessage result = player.attack();
+        ReturnMessage result = player.attack("Gromp");
+        Assert.assertEquals(ReturnMessage.OK, result);
     }
 }

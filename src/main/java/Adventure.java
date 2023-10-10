@@ -72,8 +72,8 @@ public class Adventure {
         return player.unEquipWeapon();
     }
 
-    public ReturnMessage attack() {
-        return player.attack();
+    public ReturnMessage attack(String enemyName) {
+        return player.attack(enemyName);
     }
 
-}
+    }
