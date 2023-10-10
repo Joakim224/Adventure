@@ -89,18 +89,7 @@ public class UserInterface {
                         System.out.println("You currently have " + adventure.getPlayer().getHealth() + " health");
                         break;
                     }
-                    case "attack": {
-                        ReturnMessage attack = adventure.attack();
-                        switch (attack) {
-                            case OK:
-                                break;
-                            case CANT:
-                                break;
-                            case NOT_FOUND:
-                                break;
-                        }
-                        break;
-                    }
+
                     default:
                         System.out.println("Invalid input, type 'help' for list of commands");
                 }
@@ -135,6 +124,18 @@ public class UserInterface {
                             }
                             default:
                                 System.out.println("Invalid input, type 'help' for list of commands");
+                        }
+                        break;
+                    }
+                    case "attack": {
+                        ReturnMessage attack = adventure.attack(commands[1]);
+                        switch (attack) {
+                            case OK:
+                                break;
+                            case CANT:
+                                break;
+                            case NOT_FOUND:
+                                break;
                         }
                         break;
                     }

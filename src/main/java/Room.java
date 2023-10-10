@@ -80,6 +80,10 @@ public class Room {
         return "In the room you see... " + items.toString() + " ";
     }
 
+    public String getEnemies(){
+        return enemies.toString();
+    }
+
     public Item removeItem(String itemName) {
         for (Item item : items) {
             if (item.getItemName().equals(itemName)) {

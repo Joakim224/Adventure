@@ -1,5 +1,5 @@
 public class Enemy {
-    private String name;
+    private String enemyName;
     private String description;
     private int enemyHealth;
     private Weapon weapon;
@@ -33,9 +33,9 @@ public class Enemy {
         return weapon;
     }
 
-    public boolean EnemyDead() {
-        if (health < 1) {
-            room.removeEnemy(name);
+    public boolean enemyDead() {
+        if (enemyHealth < 1) {
+            room.removeEnemy(enemyName);
             room.addItem(weapon);
             System.out.println("You killed " + enemyName);
             return true;
