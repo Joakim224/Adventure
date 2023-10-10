@@ -77,7 +77,7 @@ public class Room {
     }
 
     public String getItems() {
-        return "In the room you see... " + items.toString();
+        return "In the room you see... " + items.toString() + " ";
     }
 
     public Item removeItem(String itemName) {
@@ -96,9 +96,20 @@ public class Room {
 
     public Enemy removeEnemy(String enemyName) {
         for (Enemy enemy : enemies) {
-            if (enemy.getName().equals(enemyName)) {
+            if (enemy.getEnemyName().equals(enemyName)) {
                 enemies.remove(enemy);
                 return enemy;
+            }
+        }
+        return null;
+    }
+
+    public Enemy searchEnemies(String name) {
+        for (Enemy enemy : enemies) {
+            if (enemy.getEnemyName().equalsIgnoreCase(name)) {
+                return enemy;
+            } else {
+                System.out.println("There is no enemy in the room with that name.");
             }
         }
         return null;

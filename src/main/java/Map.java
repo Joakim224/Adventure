@@ -18,42 +18,42 @@ public class Map {
 
         room1.setSouth(room4);
         room1.setEast(room2);
-        room1.createItem("Lantern", "lights up the current room you're in");
+        room1.createItem("lantern", "lights up the current room you're in");
 
         room2.setWest(room1);
         room2.setEast(room3);
-        room2.createItem("Ring", "gives plus 15 ability power and 70 health points");
+        room2.createItem("ring", "gives plus 15 ability power and 70 health points");
 
         room3.setSouth(room6);
         room3.setWest(room2);
-        room3.createFood("Apple", "gives healthpoints: ", 10);
+        room3.createFood("apple", "gives healthpoints: ", 10);
 
         room4.setNorth(room1);
         room4.setSouth(room7);
-        room4.createMeleeWeapon("Sword", "deals 15 attack damage each attack", 15);
+        room4.createMeleeWeapon("sword", "deals 15 attack damage each attack", 15);
 
         room5.setSouth(room8);
-        room5.createEnemy("Raptors", "scabbers", 100, new RangedWeapon("beerpong bolde", "deals 25 dmg", 25, 10), room5);
+        room5.createEnemy("Raptors", "spits fireballs at you - has 100 hp & deals 25 dmg", 100, new RangedWeapon("fireballs", "deals 25 dmg", 25, 10), room5);
 
         room6.setNorth(room3);
         room6.setSouth(room9);
-        room6.createFood("Stew", "gives healthpoints: ", 15);
-        room6.createEnemy("Gromp", "big ass frog", 35, new MeleeWeapon("Claws", "Deals 20 dmg", 20), room6);
+        room6.createFood("stew", "gives healthpoints: ", 15);
+        room6.createEnemy("Gromp", "big ass frog - has 35 hp & deals 20 dmg", 35, new MeleeWeapon("claws", "Deals 20 dmg", 20), room6);
 
         room7.setNorth(room4);
         room7.setEast(room8);
-        room7.createItem("Key", "opens the door to 'The Throne Room'");
+        room7.createItem("key", "opens the door to 'The Throne Room'");
 
         room8.setNorth(room5);
         room8.setEast(room9);
         room8.setWest(room7);
-        room8.createItem("Potion", "restores 20 points of health");
-        room8.createRangedWeapon("Bow", "deals 25 damage with each arrow", 25, 5);
+        room8.createItem("potion", "restores 20 points of health");
+        room8.createRangedWeapon("bow", "deals 25 damage with each arrow", 25, 5);
 
 
         room9.setWest(room8);
         room9.setNorth(room6);
-        room9.createItem("Orb", "gives plus 70 ability power and 50 health points");
+        room9.createItem("orb", "gives plus 70 ability power and 50 health points");
 
         starterRoom = room1;
     }

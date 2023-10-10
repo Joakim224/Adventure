@@ -23,7 +23,8 @@ public class Adventure {
     public String currentRoomDescription() {
         return player.getCurrentRoom().getName() +
                 player.getCurrentRoom().getDescription() +
-                player.getCurrentRoom().getItems();
+                player.getCurrentRoom().getItems() +
+                player.getCurrentRoom().getEnemies();
     }
 
     public boolean goSouth() {

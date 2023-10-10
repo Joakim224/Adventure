@@ -173,27 +173,42 @@ public class Player {
         }
     }
 
-    public ReturnMessage attack() {
-        if (currentWeapon != null) {
-            if (currentWeapon instanceof MeleeWeapon) {
-                System.out.println("You attack!");
-            }
-            if (currentWeapon instanceof RangedWeapon) {
-                RangedWeapon rangedWeapon = (RangedWeapon) currentWeapon;
-                int currentAmmo = rangedWeapon.getAmmo();
-                if (currentAmmo > 0) {
-                    rangedWeapon.setAmmo(currentAmmo - 1);
-                    return ReturnMessage.OK;
+    public ReturnMessage attack(String enemyName) {
+        Enemy enemy = currentRoom.searchEnemies(enemyName);
+        if (enemy != null) {
+            if (currentWeapon != null) {
+                if (currentWeapon instanceof MeleeWeapon) {
+                    enemy.hit(currentWeapon.getDamage());
+                    if (!enemy.enemyDead()) {
+                        setPlayerHealth(health - enemy.getWeapon().getDamage());
+                        System.out.println("You dealt " + currentWeapon.getDamage() + " damage to " + enemyName);
+                        System.out.println("You take " + enemy.getWeapon().getDamage() + " damage from " + enemyName);
+                        return ReturnMessage.OK;
+                    }
+                }
+                if (currentWeapon instanceof RangedWeapon) {
+                    enemy.hit(currentWeapon.getDamage());
+                    if (!enemy.enemyDead()) {
+                        setPlayerHealth(health - enemy.getWeapon().getDamage());
+                    }
+                    RangedWeapon rangedWeapon = (RangedWeapon) currentWeapon;
+                    int currentAmmo = rangedWeapon.getAmmo();
+
+                    if (currentAmmo > 0) {
+                        rangedWeapon.setAmmo(currentAmmo - 1);
+                        return ReturnMessage.OK;
+                    } else {
+                        System.out.println("Out of ammo!");
+                        return ReturnMessage.CANT;
+                    }
                 } else {
-                    System.out.println("Out of ammo!");
-                    return ReturnMessage.CANT;
+                    return ReturnMessage.NOT_FOUND;
                 }
             } else {
-                return ReturnMessage.NOT_FOUND;
+                System.out.println("You don't have a weapon equipped");
+                return ReturnMessage.CANT;
             }
-        } else {
-            System.out.println("You don't have a weapon equipped");
-            return ReturnMessage.CANT;
         }
+        return ReturnMessage.CANT;
     }
 }

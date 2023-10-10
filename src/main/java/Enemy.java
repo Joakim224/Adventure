@@ -1,26 +1,34 @@
 public class Enemy {
     private String name;
     private String description;
-    private int health;
+    private int enemyHealth;
     private Weapon weapon;
     private Room room;
 
-    public Enemy(String name, String description, int health, Weapon weapon, Room room){
-        this.name = name;
+    public Enemy(String enemyName, String description, int health, Weapon weapon, Room room){
+        this.enemyName = enemyName;
         this.description = description;
-        this.health = health;
+        this.enemyHealth = health;
         this.weapon = weapon;
         this.room = room;
     }
-    public String getName(){
-        return name;
+
+    public String getEnemyName() {
+        return enemyName;
     }
-    public String getDescription(){
+
+    public String getDescription() {
         return description;
     }
-    public int getHealth(){
-        return health;
+
+    public int getHealth() {
+        return enemyHealth;
     }
+
+    public void setEnemyHealth(int health) {
+        this.enemyHealth = enemyHealth;
+    }
+
     public Weapon getWeapon(){
         return weapon;
     }
@@ -29,9 +37,23 @@ public class Enemy {
         if (health < 1) {
             room.removeEnemy(name);
             room.addItem(weapon);
+            System.out.println("You killed " + enemyName);
             return true;
         } else {
             return false;
         }
     }
+
+    public void hit(int damage) {
+        enemyHealth -= damage;
+    }
+
+    @Override
+    public String toString() {
+        return enemyName + " - " + description;
+    }
+
+    /*public void attack(Weapon weapon) {
+      this.healt -= weapon.getDamage();
+    }*/
 }

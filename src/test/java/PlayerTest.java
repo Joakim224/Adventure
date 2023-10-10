@@ -127,6 +127,7 @@ public class PlayerTest {
         //Act
         Player player = new Player(100);
         player.setCurrentRoom(room);
+        player.takeItem("Sword");
 
 
         //Assert
@@ -164,7 +165,6 @@ public class PlayerTest {
         player.setCurrentRoom(room);
         player.takeItem("Sword");
         player.equipWeapon("Sword");
-        player.attack();
 
         //Assert
         ReturnMessage result = player.attack();
