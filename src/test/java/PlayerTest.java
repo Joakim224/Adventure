@@ -215,5 +215,4 @@ public class PlayerTest {
         ReturnMessage result;
         Assert.assertEquals(80, player.getHealth());
     }
-
 }

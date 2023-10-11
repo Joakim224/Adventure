@@ -5,10 +5,12 @@ public class Player {
     private Room currentRoom;
     private ArrayList<Item> inventory;
     private Weapon currentWeapon;
+    private boolean hasKey;
 
     public Player(int health) {
         this.health = health;
         this.inventory = new ArrayList<>();
+        this.hasKey = false;
     }
 
     public int getHealth() {
@@ -17,6 +19,10 @@ public class Player {
 
     public void setPlayerHealth(int health) {
         this.health = health;
+    }
+
+    public void takeKey() {
+        hasKey = true;
     }
 
     public Room getCurrentRoom() {

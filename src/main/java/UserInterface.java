@@ -71,7 +71,7 @@ public class UserInterface {
                                 "\nINVENTORY     to look in your inventory" +
                                 "\nHEALTH        to get your current hp" +
                                 "\nEQUIP/UNEQUIP to equip or unequip weapons from your inventory" +
-                                "\nATTACk        to attack with your equipped weapon");
+                                "\nATTACK        to attack with your equipped weapon");
                         break;
                     }
                     case "look": {
