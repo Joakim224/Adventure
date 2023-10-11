@@ -79,7 +79,7 @@ public class Room {
         return "In the room you see... " + items.toString() + " ";
     }
 
-    public String getEnemies(){
+    public String getEnemies() {
         return enemies.toString();
     }
 
@@ -116,9 +116,5 @@ public class Room {
             }
         }
         return null;
-    }
-
-    public boolean isAccessible(Player player) {
-        if (player.goNorth() == )
     }
 }

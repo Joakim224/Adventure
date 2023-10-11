@@ -11,9 +11,6 @@ public class Item {
         return itemName;
     }
 
-    public String getItemDescription() {
-        return itemDescription;
-    }
 
     @Override
     public String toString() {

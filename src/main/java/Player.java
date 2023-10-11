@@ -33,14 +33,6 @@ public class Player {
         this.currentRoom = currentRoom;
     }
 
-    public Weapon getCurrentWeapon() {
-        return currentWeapon;
-    }
-
-    public void setCurrentWeapon() {
-        this.currentWeapon = currentWeapon;
-    }
-
 
     public boolean goSouth() {
         if (currentRoom.getSouth() != null) {

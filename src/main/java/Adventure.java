@@ -16,14 +16,11 @@ public class Adventure {
         map.createMap();
     }
 
-    public Room getCurrentRoom() {
-        return player.getCurrentRoom();
-    }
 
     public String currentRoomDescription() {
         return player.getCurrentRoom().getName() +
-                player.getCurrentRoom().getDescription() +
-                player.getCurrentRoom().getItems() +
+                player.getCurrentRoom().getDescription() + ("\n") +
+                player.getCurrentRoom().getItems() + ("\nEnemies:") +
                 player.getCurrentRoom().getEnemies();
     }
 
@@ -44,9 +41,6 @@ public class Adventure {
         return player.goEast();
     }
 
-    public Room currentRoom() {
-        return player.getCurrentRoom();
-    }
 
     public Item takeItem(String itemName) {
         return player.takeItem(itemName);

@@ -5,7 +5,7 @@ public class Enemy {
     private Weapon weapon;
     private Room room;
 
-    public Enemy(String enemyName, String description, int health, Weapon weapon, Room room){
+    public Enemy(String enemyName, String description, int health, Weapon weapon, Room room) {
         this.enemyName = enemyName;
         this.description = description;
         this.enemyHealth = health;
@@ -17,19 +17,11 @@ public class Enemy {
         return enemyName;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
     public int getHealth() {
         return enemyHealth;
     }
 
-    public void setEnemyHealth(int health) {
-        this.enemyHealth = enemyHealth;
-    }
-
-    public Weapon getWeapon(){
+    public Weapon getWeapon() {
         return weapon;
     }
 
@@ -53,7 +45,4 @@ public class Enemy {
         return enemyName + " - " + description;
     }
 
-    /*public void attack(Weapon weapon) {
-      this.healt -= weapon.getDamage();
-    }*/
 }
