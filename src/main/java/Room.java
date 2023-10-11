@@ -31,7 +31,6 @@ public class Room {
         return north;
     }
 
-
     public void setWest(Room west) {
         this.west = west;
     }

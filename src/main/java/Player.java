@@ -191,10 +191,11 @@ public class Player {
                     enemy.hit(currentWeapon.getDamage());
                     if (!enemy.enemyDead()) {
                         setPlayerHealth(health - enemy.getWeapon().getDamage());
+                        System.out.println("You dealt " + currentWeapon.getDamage() + " damage to " + enemyName);
+                        System.out.println("You take " + enemy.getWeapon().getDamage() + " damage from " + enemyName);
                     }
                     RangedWeapon rangedWeapon = (RangedWeapon) currentWeapon;
                     int currentAmmo = rangedWeapon.getAmmo();
-
                     if (currentAmmo > 0) {
                         rangedWeapon.setAmmo(currentAmmo - 1);
                         return ReturnMessage.OK;

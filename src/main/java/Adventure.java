@@ -75,5 +75,4 @@ public class Adventure {
     public ReturnMessage attack(String enemyName) {
         return player.attack(enemyName);
     }
-
-    }
+}

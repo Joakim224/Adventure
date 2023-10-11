@@ -162,10 +162,11 @@ public class PlayerTest {
         //Arange
         Room room = new Room("testRoom", "test");
         room.createMeleeWeapon("Sword", "Sharp", 40);
-        room.createEnemy("Gromp", "big ass frog", 35, new MeleeWeapon("Claws", "Deals 20 dmg", 20), room);
+        room.createEnemy("Gromp", "big ass frog", 45, new MeleeWeapon("Claws", "Deals 20 dmg", 20), room);
 
         //Act
         Player player = new Player(100);
+        Enemy enemy = new Enemy("Gromp", "big ass frog", 45, new MeleeWeapon("Claws", "Deals 20 dmg", 20), room);
         player.setCurrentRoom(room);
         player.takeItem("Sword");
         player.equipWeapon("Sword");

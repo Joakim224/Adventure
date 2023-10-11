@@ -207,7 +207,6 @@ public class UserInterface {
                     }
                     default:
                         System.out.println("Invalid input, type 'help' for list of commands");
-
                 }
         }
     }
