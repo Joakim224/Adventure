@@ -44,5 +44,4 @@ public class Enemy {
     public String toString() {
         return enemyName + " - " + description;
     }
-
 }
